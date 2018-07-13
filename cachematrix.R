@@ -1,5 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Constructing the cache matrix vector, which sets or obtains the data and also the inverse.
+## function
 
 ## Write a short comment describing this function
 
@@ -16,7 +16,8 @@ list(set=set,get=get,setinverse=setinverse,getinverse=getinverse)
 }
 
 
-## Write a short comment describing this function
+## The Function calculates the inverse of the above created cache matrix vector. It first checks to see if the inverse has already been calculated.
+##If so, it obtains the inverse from the cache & skips the computation.
 
 cacheSolve <- function(x, ...) {
 i<-x$getinverse()
@@ -28,5 +29,5 @@ data<-x$get()
 i<-solve(data,...)
 x$setinverse(i)
 i
-        ## Return a matrix that is the inverse of 'x'
 }
+        ## Return a matrix that is the inverse of 'x'
